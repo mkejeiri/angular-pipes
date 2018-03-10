@@ -1,7 +1,7 @@
 # Angular pipes
 
-### You will have a closer look into the basic built-in pipes and you create some custom one:
-> - **Buit-in pipes** '|' such as : uppercase, date... [more](https://angular.io/api/common/DatePipe)
+### You will get a closer look into the basic built-in pipes, and some custom pipes:
+> - **Buit-in pipes** '|' such as : uppercase, [date](https://angular.io/api/common/DatePipe)... [more](https://angular.io/guide/pipes)
 > - **custom pipes**:
 > > - Shorten pipe: this acts like a string.str() method... 
 > > - List fitering pipe based on 'select' input: depending on the selected value, the status matching criteria is shown!, you explore also the 'inpure pipe' concept from different angles, and why you should avoid it...
@@ -24,7 +24,7 @@
 
 * * *
 
-##### *You may also need to run the following (i.e bootstrap package has been removed from angular neyour versions!):*
+##### *You may also have to run the following (i.e bootstrap package has been removed from angular neyour versions!):*
 
 `npm install bootstrap@3.3.7`
 

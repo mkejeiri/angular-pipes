@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   filterStatus='all';
+  /**
+   * this a async call since it use a promise, it's like an observable,
+   * we have to subscribe to it otherwise we will get [object Promise] in
+   * the template, luckily async is a pipe which do this subscription for us.
+   */
   statusAsync= new Promise((resolve,reject)=>{
     setTimeout(()=>{
       resolve('stable');

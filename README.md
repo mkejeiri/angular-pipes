@@ -1,6 +1,6 @@
 # Angular pipes
 
-### You will get a closer look into the basic built-in pipes, and some custom pipes:
+### You will get a closer look onto the basic built-in pipes, and also the custom pipes:
 > - **Buit-in pipes** '|' such as : uppercase, [date](https://angular.io/api/common/DatePipe)... [more](https://angular.io/guide/pipes)
 > - **custom pipes**:
 > > - Shorten pipe: this acts like a string.str() method... 

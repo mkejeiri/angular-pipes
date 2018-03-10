@@ -1,4 +1,4 @@
-# Angular-pipes
+# Angular pipes
 
 ### You will have a closer look into the basic built-in pipes and you create some custom one:
 > - **Buit-in pipes** '|' such as : uppercase, date... [more](https://angular.io/api/common/DatePipe)
@@ -16,10 +16,6 @@
 
 
 ## Usage:
-
-
-
-
 1. `npm install`
 2. `ng serve`
 

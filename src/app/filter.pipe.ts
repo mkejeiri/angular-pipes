@@ -26,7 +26,7 @@ export class FilterPipe implements PipeTransform {
  */
 
   transform(value: any, filterValue: string, propertyName:string): any {  
-    console.log('inside pipe: '+propertyName+' - '+filterValue );     
+    // console.log('inside pipe: '+propertyName+' - '+filterValue );     
     if (filterValue.length > 0 && filterValue !=='all') {
       const result=[];
       for (const element of value){        

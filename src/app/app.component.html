@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
+      <label for="filterId">Filter the ouput by 'status': </label>
+      <select name="filterbystatus" id="filterId"  [(ngModel)]="filterStatus" >
+          <option value="all">All</option>
+          <option value="stable">Stable</option>
+          <option value="offline">Offline</option>
+          <option value="critical">Critical</option>
+      </select>
+      <!-- <input id="filterId" type="text" [(ngModel)]="filterStatus" class="form-control"> -->
+      <hr>
+      <button type="button" (click)="onAddCriticalServer()" class="btn btn-danger">Add Critical Server</button>
+      <button type="button" (click)="onAddStableServer()" class="btn btn-success">Add Stable Server</button>
+      <button type="button" (click)="onAddOfflineServer()" class="btn btn-warning">Add Offline Server</button>
+      <hr>
+      <!-- 
+                      ********  
+                      N O T E :
+                      ********
+        without a pipe 'async' we will get App status: [object Promise] display on the page
+        with async we tell angular to listen/subscribe to the value change(like observable) 
+         and display the value back when it becomes available! -->
+      <h4>App status: {{statusAsync|async}}</h4>
+      <hr>
+      <ul class="list-group">
+          <!--         
+                                ********************
+                                C U S T O M  P I P E
+                                ********************  
+            we are using the 'filter' custom pipe on a list of objects, we applies it to status based on 
+            the select output above which linked into a filterStatus property in ts : 
+            {instanceType: 'medium',name: 'Production Server', status: 'stable',started: new Date(15, 1, 2017)} 
+        -->
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers|filter:filterStatus:'status'"
+          [ngClass]="getStatusClasses(server)">      
+          <!-- 
+            shorten pipes is using the string.substr(0:25) 
+          -->
+          <strong>{{ server.name |shorten:0:25 }}</strong> | 
+          {{ server.instanceType|uppercase }} | 
+
+          <!-- 
+            more on date pipes: https://angular.io/api/common/DatePipe
+           -->
+          {{ server.started | date:'fullDate' }}
+          <span
+            class="badge">
+            {{ server.status }}
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
